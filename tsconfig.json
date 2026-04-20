@@ -1,11 +1,11 @@
 {
-    "include": ["src"],
+    "include": ["./src"], // 加了 ./ 修复路径错误
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
         "types": ["@cloudflare/workers-types"],
-        "moduleResolution": "bundler",
-        "paths": {"*": ["./*"]},
+        "moduleResolution": "bundler", // 替换废弃的 node
+        "baseUrl": ".", // 必须改成 . 才能配合 paths 正常工作
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -13,16 +13,16 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "paths": {
-            "@xray/*": ["cores/xray/*"],
-            "@sing-box/*": ["cores/sing-box/*"],
-            "@clash/*": ["cores/clash/*"],
-            "@utils": ["cores/utils"],
-            "@handlers": ["common/handlers"],
-            "@init": ["common/init"],
-            "@common": ["common/common"],
-            "@vless": ["protocols/websocket/vless"],
-            "@trojan": ["protocols/websocket/trojan"],
-            "@warp": ["protocols/warp"]
+            "@xray/*": ["./src/cores/xray/*"],
+            "@sing-box/*": ["./src/cores/sing-box/*"],
+            "@clash/*": ["./src/cores/clash/*"],
+            "@utils": ["./src/cores/utils"],
+            "@handlers": ["./src/common/handlers"],
+            "@init": ["./src/common/init"],
+            "@common": ["./src/common/common"],
+            "@vless": ["./src/protocols/websocket/vless"],
+            "@trojan": ["./src/protocols/websocket/trojan"],
+            "@warp": ["./src/protocols/warp"]
         }
     }
 }
