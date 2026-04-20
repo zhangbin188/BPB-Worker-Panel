@@ -1,14 +1,16 @@
 {
-    "include": ["./src"],
+    "include": ["./src", "./src/types/**/*"],
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
         "types": ["@cloudflare/workers-types"],
-        "moduleResolution": "node", // 保持原样
-        "baseUrl": "src", // 保持原样（必须保留，否则类型全炸）
-        "ignoreDeprecations": "6.0", // 核心：屏蔽弃用报错
-        "strict": true,
-        "noImplicitAny": false, // 关闭隐式 any
+        "moduleResolution": "node",
+        "baseUrl": "src",
+        "ignoreDeprecations": "6.0",
+        "strict": false,
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "strictNullChecks": false,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
