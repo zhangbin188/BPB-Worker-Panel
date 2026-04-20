@@ -1,11 +1,10 @@
 {
-    "include": ["./src"], // 加了 ./ 修复路径错误
+    "include": ["./src"],
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
         "types": ["@cloudflare/workers-types"],
-        "moduleResolution": "bundler", // 替换废弃的 node
-        "baseUrl": ".", // 必须改成 . 才能配合 paths 正常工作
+        "moduleResolution": "bundler",  // 关键
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
